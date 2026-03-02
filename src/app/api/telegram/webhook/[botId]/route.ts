@@ -191,7 +191,7 @@ export async function POST(
                 console.log('[AI DEBUG] Calling generateAIResponse, history length:', history.length)
                 const { generateAIResponse } = await import('@/lib/ai/chat-engine')
                 const { response, paymentInfo } = await generateAIResponse(
-                    { id: botId, ai_prompt_context: bot.ai_prompt_context, language: bot.language, gemini_api_key: undefined },
+                    { id: botId, ai_prompt_context: bot.ai_prompt_context, language: bot.language },
                     history, text, lang, chatId
                 )
                 console.log('[AI DEBUG] Response length:', response?.length)
